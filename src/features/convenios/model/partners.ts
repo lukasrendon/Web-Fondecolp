@@ -21,6 +21,7 @@ export const PARTNERS = [
       { name: "Spinning Center", service: "Gimnasio", href: "https://fondecolp.com/wp-content/uploads/2024/08/SPINNING-GYM.pdf" },
       { name: "Alkosto", service: "Supermercado", href: "https://fondecolp.com/wp-content/uploads/2024/08/ALKOSTO.pdf" },
       { name: "Expreso Viajes y Turismo", service: "Agencia de viajes CAFAM", href: "https://fondecolp.com/wp-content/uploads/2024/08/CAFAM_VF.pdf" },
+      { name: "GES Recreación", service: "Salitre Mágico, Mundo Aventura y Hacienda Nápoles", href: "/convenios/salitre-magico" },
       { name: "Zenú", service: "Alimentos cárnicos" },
     ],
   },

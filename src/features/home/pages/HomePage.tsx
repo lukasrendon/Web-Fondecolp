@@ -11,6 +11,7 @@ import {
 import { CREDIT_LINES } from "@/features/credit/model/credit-lines";
 import { CreditSimulator } from "@/features/credit/components/CreditSimulator";
 import { JOIN_STEPS } from "@/features/membership/model/join";
+import { CampaignGrid } from "@/features/convenios/components/CampaignGrid";
 import { PARTNERS } from "@/features/convenios/model/partners";
 import { FAQS } from "@/features/home/model/faqs";
 import { Container, Section } from "@/shared/components/Layout";
@@ -172,6 +173,29 @@ export function HomePage() {
               </li>
             ))}
           </ol>
+        </Container>
+      </Section>
+
+      <Section className="bg-white">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-leaf">GES · Recreación</p>
+              <h2 className="font-display mt-2 text-3xl text-navy sm:text-4xl">
+                Parques con tarifa de asociado
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted">
+                Salitre Mágico, Mundo Aventura y Hacienda Nápoles. Combos desde $70.000, varios con
+                alimentación incluida.
+              </p>
+            </div>
+            <Link href={ROUTES.partners} className="text-sm font-semibold text-leaf">
+              Ver convenios
+            </Link>
+          </div>
+          <div className="mt-8">
+            <CampaignGrid />
+          </div>
         </Container>
       </Section>
 
