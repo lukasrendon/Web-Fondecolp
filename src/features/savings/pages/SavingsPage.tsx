@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SAVING_PRODUCTS } from "@/features/savings/model/products";
+import { SAVING_PRODUCTS, SAVING_HIGHLIGHT } from "@/features/savings/model/products";
 import { PageHero, Container, Section } from "@/shared/components/Layout";
 import { ROUTES } from "@/shared/lib/routes";
 import { Button } from "@/shared/ui/button";
@@ -10,17 +10,18 @@ export function SavingsPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Ahorro" }]}
         eyebrow="Ahorro"
-        title="Primero el hábito, después el cupo de crédito."
-        description="La página de ahorro en el sitio actual está vacía. Aquí explicamos qué ahorras, para qué sirve y cómo se relaciona con las líneas de crédito."
+        title={SAVING_HIGHLIGHT}
+        description="En el WordPress estas reglas viven dentro de imágenes, así que no se pueden buscar ni leer con lector de pantalla. Aquí el ahorro obligatorio (3%–10%) y el programado (6 a 12 meses) están en texto."
         actions={
           <Button asChild>
-            <Link href={ROUTES.join}>Empezar a aportar</Link>
+            <Link href={ROUTES.join}>Autorizar el aporte</Link>
           </Button>
         }
       />
       <Section>
-        <Container className="grid gap-5 lg:grid-cols-3">
+        <Container className="grid gap-5 lg:grid-cols-2">
           {SAVING_PRODUCTS.map((product) => (
             <Card key={product.name}>
               <CardHeader>
@@ -41,12 +42,12 @@ export function SavingsPage() {
       </Section>
       <Section className="bg-white">
         <Container className="max-w-3xl">
-          <h2 className="font-display text-3xl text-navy">Por qué el ahorro del fondo no es un CDT cualquiera</h2>
+          <h2 className="font-display text-3xl text-navy">Cómo se relaciona con el crédito</h2>
           <p className="mt-4 leading-7 text-muted">
-            El aporte mensual te hace asociado hábil, te da voz en asamblea y es el respaldo de
-            Crediaportes. El ahorro voluntario se abre con destinaciones específicas, según el
-            reglamento. Las tasas, topes y retiros se publican en el PDF normativo: no inventamos
-            números que el fondo no haya comunicado.
+            El aporte obligatorio te hace asociado hábil y respalda Crediaportes. El programado es
+            voluntario, de libre destinación, con rendimientos solidarios. El detalle normativo sigue
+            en el reglamento PDF; aquí no inventamos tasas de rentabilidad que el fondo no haya
+            publicado como número.
           </p>
           <Button asChild variant="ghost" className="mt-4 px-0">
             <a

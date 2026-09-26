@@ -1,7 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { SITE } from "@/shared/lib/site";
+import { ROUTES } from "@/shared/lib/routes";
 import { Button } from "@/shared/ui/button";
 import { Input, Label, Textarea } from "@/shared/ui/field";
 
@@ -78,6 +80,22 @@ export function ContactForm() {
       <div className="space-y-1.5">
         <Label htmlFor="mensaje">Mensaje</Label>
         <Textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos cómo podemos ayudarte" />
+      </div>
+      <div className="flex items-start gap-3 text-sm text-muted">
+        <input
+          id="habeas"
+          name="habeas"
+          type="checkbox"
+          required
+          className="mt-1 size-4 accent-[#4f9a35]"
+        />
+        <label htmlFor="habeas">
+          Autorizo el tratamiento de mis datos para atender esta solicitud, según la{" "}
+          <Link href={ROUTES.privacy} className="font-medium text-navy underline">
+            política de privacidad
+          </Link>
+          .
+        </label>
       </div>
       {status === "error" ? <p className="text-sm text-berry">{error}</p> : null}
       <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">

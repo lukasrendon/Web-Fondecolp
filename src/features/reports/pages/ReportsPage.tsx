@@ -6,6 +6,7 @@ export function ReportsPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Informes y asamblea" }]}
         eyebrow="Informes y asamblea"
         title="La rendición de cuentas no debería ser un archivo con el mismo enlace dos veces."
         description="En el WordPress, convocatoria y reglamento de asamblea 2025 apuntan al mismo PDF. Aquí cada documento tiene título, año y descarga."

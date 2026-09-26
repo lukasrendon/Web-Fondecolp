@@ -7,6 +7,7 @@ export function ContactPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Contáctanos" }]}
         eyebrow="Contáctanos"
         title="Habla con personas del fondo, no con un formulario de 200 países."
         description="WhatsApp, correo y un formulario en español, con Colombia primero. Oficina virtual y PSE siguen en los mismos sistemas que ya usan los asociados."

@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
 import { cn } from "@/shared/lib/utils";
 
 export function Container({
@@ -22,14 +23,37 @@ export function PageHero({
   title,
   description,
   actions,
+  crumbs,
 }: {
   eyebrow?: string;
   title: string;
   description: string;
   actions?: ReactNode;
+  crumbs?: { href?: string; label: string }[];
 }) {
   return (
     <div className="hero-wash text-white">
+      {crumbs?.length ? (
+        <nav aria-label="Miga de pan" className="border-b border-white/10">
+          <Container className="flex flex-wrap items-center gap-2 py-3 text-xs text-white/70">
+            <Link href="/" className="hover:text-white">
+              Inicio
+            </Link>
+            {crumbs.map((item) => (
+              <span key={item.label} className="flex items-center gap-2">
+                <span aria-hidden>/</span>
+                {item.href ? (
+                  <Link href={item.href} className="hover:text-white">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className="text-white">{item.label}</span>
+                )}
+              </span>
+            ))}
+          </Container>
+        </nav>
+      ) : null}
       <Container className="py-16 sm:py-20">
         {eyebrow ? (
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">

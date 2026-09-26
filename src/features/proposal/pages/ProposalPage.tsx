@@ -5,12 +5,12 @@ import { Button } from "@/shared/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 
 const problems = [
-  "WordPress + Astra + bloques: el inicio son tres imágenes (Asóciate, Contáctanos, Prima anticipada) sin un mensaje institucional.",
-  "El HTML declara lang=en-US aunque todo el contenido está en español.",
-  "El formulario de contacto pide “Phone” con códigos de Reino Unido y Canadá primero.",
-  "La página de Ahorro está vacía. Informes duplica el enlace de la convocatoria 2025.",
-  "Erratas visibles (Sevicio, Gimasio, Turísmo) y tablas de junta distintas en dos páginas.",
-  "Mantenimiento atado a plugins, PHP, actualizaciones de WordPress 7.1.2 y tema Astra 4.13.10 en Hostinger.",
+  "El inicio es un slider de tres piezas gráficas: el copy (prima 1,02% M.V., ahorro 3%–10%) queda atrapado en imágenes, mal para SEO y accesibilidad. Hay un typo: “CONSUEGUELA YA”.",
+  "El HTML declara lang=en-US aunque todo el contenido está en español. Tipografía Alata y tema Astra 4.13.10.",
+  "El formulario de contacto pide Phone con códigos de país mundiales; no hay política de privacidad ni términos.",
+  "Ahorro obligatorio y programado existen, pero como infografías. Un lector de pantalla no las lee. Informes duplica el PDF de convocatoria 2025.",
+  "Erratas (Sevicio, Gimasio, Turísmo), hover coral en tarjetas grises, junta distinta en dos páginas y pie “F&L Desarrollo”.",
+  "Mantenimiento atado a WordPress, PHP 8.5, LiteSpeed y plugins en Hostinger, con correo en Gmail.",
 ];
 
 const stack = [
@@ -25,6 +25,7 @@ export function ProposalPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Análisis y propuesta" }]}
         eyebrow="Análisis y propuesta"
         title="Sí se puede hacer el sitio tal cual, y se puede hacer mejor."
         description="Esta demostración reconstruye FONDECOLP con la identidad del árbol, los mismos servicios y los mismos enlaces a oficina virtual, PSE y PDFs, pero con un diseño institucional y un mantenimiento más predecible que WordPress."
@@ -56,7 +57,8 @@ export function ProposalPage() {
               <ul className="space-y-3 text-sm leading-6 text-muted">
                 <li>· Home con propuesta de valor, simulador de cuota y pasos para asociarse.</li>
                 <li>· Comparador de las 6 líneas de crédito y formatos nombrados.</li>
-                <li>· Ahorro explicado (hoy no existe copy).</li>
+                <li>· Ahorro obligatorio 3%–10% y programado 6–12 meses, en texto y no en imagen.</li>
+                <li>· Preguntas frecuentes (qué es M.V., asociado hábil, afianzadora) y páginas de privacidad y términos.</li>
                 <li>· Formulario colombiano, WhatsApp visible, idioma es-CO.</li>
                 <li>· Transparencia: informes, estatutos y órganos sin duplicar datos.</li>
                 <li>· Móvil primero, accesible, sin plugins ni página de administración expuesta.</li>

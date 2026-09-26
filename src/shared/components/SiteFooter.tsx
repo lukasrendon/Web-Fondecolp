@@ -28,6 +28,7 @@ const columns = [
       { href: ROUTES.join, label: "Asóciate" },
       { href: ROUTES.joinForm, label: "Formulario de afiliación" },
       { href: ROUTES.contact, label: "Contáctanos" },
+      { href: ROUTES.faq, label: "Preguntas frecuentes" },
     ],
   },
 ];
@@ -68,7 +69,15 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {SITE.legalName}. Todos los derechos reservados.</p>
-          <p>Inscripción Cámara de Comercio {SITE.chamber}</p>
+          <p className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href={ROUTES.privacy} className="hover:text-white">
+              Privacidad
+            </Link>
+            <Link href={ROUTES.terms} className="hover:text-white">
+              Términos
+            </Link>
+            <span>Cámara de Comercio {SITE.chamber}</span>
+          </p>
         </Container>
       </div>
     </footer>

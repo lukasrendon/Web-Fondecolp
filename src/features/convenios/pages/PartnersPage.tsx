@@ -7,6 +7,7 @@ export function PartnersPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Convenios y aliados" }]}
         eyebrow="Convenios y aliados"
         title="Salud, seguros y bienestar con desembolso al proveedor."
         description="Los aliados del sitio actual se listan con erratas (“Sevicio”, “Gimasio”) y PDFs sueltos. Aquí cada convenio tiene categoría, descripción y ficha."

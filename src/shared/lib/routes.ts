@@ -10,6 +10,9 @@ export const ROUTES = {
   partners: "/convenios",
   contact: "/contacto",
   proposal: "/propuesta",
+  privacy: "/privacidad",
+  terms: "/terminos",
+  faq: "/preguntas-frecuentes",
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];

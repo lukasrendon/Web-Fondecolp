@@ -5,6 +5,7 @@ export function GovernancePage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Órganos de administración" }]}
         eyebrow="Gobierno corporativo"
         title="Quién administra, quién vigila y quién resuelve apelaciones."
         description="La información de órganos está repetida y desactualizada entre dos páginas del sitio actual. Esta ficha usa el listado dedicado 2023–2025."

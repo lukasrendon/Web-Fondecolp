@@ -10,6 +10,7 @@ export function AboutPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Quiénes somos" }]}
         eyebrow="Quiénes somos"
         title="Un fondo de empleados, no un banco con logo verde."
         description="FONDECOLP es una empresa asociativa de derecho privado, sin ánimo de lucro, de responsabilidad limitada, con número de asociados y patrimonio variable e ilimitado."

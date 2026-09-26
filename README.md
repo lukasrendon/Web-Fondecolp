@@ -17,8 +17,9 @@ Problemas que justifican el rediseño: inicio reducido a tres imágenes; `lang="
 
 - Inicio con mensaje institucional, simulador de cuota y pasos para asociarse.
 - Comparador de las 6 líneas de crédito (tasas publicadas en el sitio actual).
-- Ahorro, convenios, informes, órganos 2023–2025 y formulario colombiano.
-- Español (`es-CO`), WhatsApp fijo, NIT y vigilancia de la Superintendencia visibles.
+- Ahorro obligatorio (3%–10% del sueldo) y programado (6 a 12 meses), sacados de las infografías del WordPress.
+- Asociación en 4 pasos, FAQ, privacidad/habeas data y formulario colombiano.
+- Convenios, informes, órganos 2023–2025, español `es-CO` y WhatsApp fijo.
 
 ## Stack (lenguaje y herramientas)
 

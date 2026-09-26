@@ -32,6 +32,12 @@ export function SiteHeader() {
             <a href={`tel:${SITE.phoneTel}`} className="hover:text-white">
               {SITE.phoneDisplay}
             </a>
+            <a href={SITE.facebookUrl} target="_blank" rel="noreferrer" className="hover:text-white">
+              Facebook
+            </a>
+            <a href={SITE.instagramUrl} target="_blank" rel="noreferrer" className="hover:text-white">
+              Instagram
+            </a>
             <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer" className="hover:text-white">
               WhatsApp
             </a>

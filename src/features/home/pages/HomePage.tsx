@@ -12,6 +12,7 @@ import { CREDIT_LINES } from "@/features/credit/model/credit-lines";
 import { CreditSimulator } from "@/features/credit/components/CreditSimulator";
 import { JOIN_STEPS } from "@/features/membership/model/join";
 import { PARTNERS } from "@/features/convenios/model/partners";
+import { FAQS } from "@/features/home/model/faqs";
 import { Container, Section } from "@/shared/components/Layout";
 import { ROUTES } from "@/shared/lib/routes";
 import { SITE } from "@/shared/lib/site";
@@ -24,7 +25,7 @@ const services = [
     title: "Ahorro",
     href: ROUTES.savings,
     icon: PiggyBank,
-    text: "Aporte periódico y ahorros voluntarios con destinación específica.",
+    text: "Aporte del 3% al 10% del sueldo y ahorro programado a 6–12 meses.",
   },
   {
     title: "Crédito",
@@ -58,11 +59,12 @@ export function HomePage() {
               Fondo de empleados · Sector solidario
             </Badge>
             <h1 className="font-display mt-5 max-w-xl text-4xl leading-[1.1] sm:text-6xl">
-              Ahorro y crédito que crecen con los empleados de Colpensiones.
+              Te acompañamos a construir tus proyectos.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/80">
-              FONDECOLP es una empresa asociativa sin ánimo de lucro. Aquí tus aportes no se van a
-              un banco: financian créditos más humanos, convenios y bienestar para asociados hábiles.
+              Ahorra entre el 3% y el 10% de tu salario básico, pide crédito con tasas desde 0,8%
+              M.V. y usa convenios para ti y tu familia. FONDECOLP es el fondo de empleados de
+              Colpensiones: sin ánimo de lucro y vigilado por la Superintendencia.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -193,6 +195,25 @@ export function HomePage() {
                 </div>
               ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-white pt-0">
+        <Container>
+          <div className="flex items-end justify-between gap-4">
+            <h2 className="font-display text-3xl text-navy">Preguntas que el sitio actual no responde</h2>
+            <Link href={ROUTES.faq} className="text-sm font-semibold text-leaf">
+              Ver todas
+            </Link>
+          </div>
+          <dl className="mt-8 grid gap-4 md:grid-cols-2">
+            {FAQS.slice(0, 4).map((item) => (
+              <div key={item.q} className="rounded-2xl border border-line p-5">
+                <dt className="font-semibold text-navy">{item.q}</dt>
+                <dd className="mt-2 text-sm leading-6 text-muted">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </Section>
 

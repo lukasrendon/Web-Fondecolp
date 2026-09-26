@@ -9,7 +9,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
 const benefits = [
   {
     title: "Ahorro",
-    text: "Opciones obligatorias y voluntarias para destinaciones específicas.",
+    text: "Ahorro obligatorio del 3% al 10% del sueldo y programado a 6–12 meses.",
   },
   {
     title: "Crédito",
@@ -29,6 +29,7 @@ export function JoinPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Asóciate" }]}
         eyebrow="Asóciate"
         title="Ser asociado es más que pedir un crédito."
         description="Al vincularte a FONDECOLP accedes a ahorro, crédito, salud, previsión, educación y solidaridad pensados para empleados y vinculados de Colpensiones."

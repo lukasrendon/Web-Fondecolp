@@ -11,9 +11,10 @@ export function CreditPage() {
   return (
     <>
       <PageHero
+        crumbs={[{ label: "Líneas de crédito" }]}
         eyebrow="Líneas de crédito"
         title="Seis líneas, una tabla que sí se puede comparar."
-        description="Las condiciones son las publicadas hoy en fondecolp.com. Las presentamos como fichas, no como un bloque de texto corrido."
+        description="Las condiciones son las publicadas hoy en fondecolp.com. M.V. significa mensual vencida: el interés de cada mes. Las presentamos como fichas, no como un bloque de texto corrido."
         actions={
           <Button asChild variant="outline">
             <Link href={ROUTES.partners}>Ver convenios para Fonconvenios</Link>
