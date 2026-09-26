@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0b3d6e;
+  --navy-deep: #072a4d;
+  --navy-soft: #e7eef6;
+  --leaf: #4f9a35;
+  --leaf-deep: #3a7428;
+  --leaf-soft: #e8f4e1;
+  --berry: #c62828;
+  --gold: #c4a35a;
+  --paper: #f7f4ec;
+  --ink: #1c2a22;
+  --muted: #5b675f;
+  --line: #d9d3c4;
+  --white: #ffffff;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --radius: 0.85rem;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-soft: var(--navy-soft);
+  --color-leaf: var(--leaf);
+  --color-leaf-deep: var(--leaf-deep);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-berry: var(--berry);
+  --color-gold: var(--gold);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-fraunces);
+  --radius-sm: 0.5rem;
+  --radius-md: var(--radius);
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  font-feature-settings: "ss01" on, "cv11" on;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: #cde5c0;
+  color: var(--navy-deep);
+}
+
+.surface-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(11, 61, 110, 0.07) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.hero-wash {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(79, 154, 53, 0.28), transparent 55%),
+    radial-gradient(900px 420px at 90% 0%, rgba(196, 163, 90, 0.18), transparent 50%),
+    linear-gradient(180deg, #072a4d 0%, #0b3d6e 58%, #0e4a82 100%);
+}
