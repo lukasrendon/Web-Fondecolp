@@ -27,4 +27,35 @@ export const QUOTE = {
   ],
   monthlyAfter: 350_000,
   courtesyMonths: 3,
+  hours: 145,
+  hourlyList: 89_000,
+  hourlyFriend: 47_500,
 } as const;
+
+export const VALUE_BREAKDOWN = [
+  {
+    item: "Arquitectura y diseño institucional",
+    hours: 28,
+    text: "Identidad del fondo (no plantilla Astra), navegación, móvil y componentes reutilizables.",
+  },
+  {
+    item: "12 secciones + 3 campañas GES",
+    hours: 46,
+    text: "Inicio, crédito, ahorro, convenios, asociación, informes, órganos, FAQ y legales, con el contenido real del fondo.",
+  },
+  {
+    item: "Simulador, formularios y WhatsApp",
+    hours: 16,
+    text: "Cuota por línea, contacto con habeas data y preasociación guiada.",
+  },
+  {
+    item: "Migración desde WordPress",
+    hours: 22,
+    text: "PDFs, redirecciones, Hostinger, no romper oficina virtual ni PSE.",
+  },
+  {
+    item: "Ajustes, prueba y garantía",
+    hours: 33,
+    text: "Dos rondas, recorrido móvil/escritorio, 30 días por defectos de lo entregado.",
+  },
+] as const;

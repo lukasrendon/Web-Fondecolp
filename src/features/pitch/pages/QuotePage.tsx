@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { QUOTE } from "@/features/pitch/model/quote";
+import { QUOTE, VALUE_BREAKDOWN } from "@/features/pitch/model/quote";
 import { PageHero, Container, Section } from "@/shared/components/Layout";
 import { ROUTES } from "@/shared/lib/routes";
 import { formatCop } from "@/shared/lib/utils";
@@ -90,6 +90,68 @@ export function QuotePage() {
         </Container>
       </Section>
       <Section className="bg-white">
+        <Container>
+          <h2 className="font-display text-3xl text-navy">De dónde sale el número</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">
+            El valor de referencia ({formatCop(QUOTE.listLaunch)}) es ~{QUOTE.hours} horas de trabajo
+            profesional a {formatCop(QUOTE.hourlyList)}/hora: lo que costaría el mismo alcance con
+            una agencia o un freelancer consolidado. La tarifa primer caso ({formatCop(optionA.price)})
+            baja esa hora a {formatCop(QUOTE.hourlyFriend)}. No es un “sitio de Hostinger”: es
+            reemplazar la vitrina del fondo sin tocar los sistemas de ahorro y pago.
+          </p>
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-line">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <thead className="bg-paper text-muted">
+                <tr>
+                  <th className="px-5 py-3">Bloque</th>
+                  <th className="px-5 py-3">Horas</th>
+                  <th className="px-5 py-3">Qué cubre</th>
+                </tr>
+              </thead>
+              <tbody>
+                {VALUE_BREAKDOWN.map((row) => (
+                  <tr key={row.item} className="border-t border-line align-top">
+                    <td className="px-5 py-3 font-medium text-navy">{row.item}</td>
+                    <td className="px-5 py-3">{row.hours}</td>
+                    <td className="px-5 py-3 text-muted">{row.text}</td>
+                  </tr>
+                ))}
+                <tr className="border-t border-line bg-leaf-soft">
+                  <td className="px-5 py-3 font-semibold text-navy">Total estimado</td>
+                  <td className="px-5 py-3 font-semibold text-navy">{QUOTE.hours} h</td>
+                  <td className="px-5 py-3 text-navy">
+                    Referencia {formatCop(QUOTE.listLaunch)} · aplicada {formatCop(optionA.price)}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <dl className="mt-6 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-line p-4">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-leaf">Vs. WordPress actual</dt>
+              <dd className="mt-2 text-sm text-muted">
+                Seguir con tema y plugins sale barato el mes 1 y caro en errores, seguridad y
+                páginas que el asociado no entiende.
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-line p-4">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-leaf">Vs. agencia</dt>
+              <dd className="mt-2 text-sm text-muted">
+                El mismo paquete en agencia suele ir de 15 a 25 millones. El valor tachado de{" "}
+                {formatCop(QUOTE.listLaunch)} es conservador.
+              </dd>
+            </div>
+            <div className="rounded-2xl border border-line p-4">
+              <dt className="text-xs font-semibold uppercase tracking-wide text-leaf">Qué no están pagando</dt>
+              <dd className="mt-2 text-sm text-muted">
+                Hosting, dominio, oficina virtual ni PSE. El descuento son horas más baratas, no
+                menos páginas.
+              </dd>
+            </div>
+          </dl>
+        </Container>
+      </Section>
+      <Section>
         <Container className="grid gap-8 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-3xl text-navy">Qué incluye</h2>
