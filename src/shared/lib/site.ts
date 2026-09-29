@@ -31,7 +31,9 @@ export const NAV = [
       { href: ROUTES.governance, label: "Órganos de administración" },
       { href: ROUTES.reports, label: "Informes y asamblea" },
       { href: ROUTES.faq, label: "Preguntas frecuentes" },
-      { href: ROUTES.proposal, label: "Análisis y propuesta" },
+      { href: ROUTES.pitch, label: "Presentación" },
+      { href: ROUTES.map, label: "Mapa del sitio" },
+      { href: ROUTES.proposal, label: "Análisis técnico" },
     ],
   },
   {

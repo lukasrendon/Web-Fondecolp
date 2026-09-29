@@ -11,7 +11,8 @@ const columns = [
       { href: ROUTES.about, label: "Quiénes somos" },
       { href: ROUTES.governance, label: "Órganos de administración" },
       { href: ROUTES.reports, label: "Informes" },
-      { href: ROUTES.proposal, label: "Análisis del sitio" },
+      { href: ROUTES.pitch, label: "Presentación" },
+      { href: ROUTES.map, label: "Mapa del sitio" },
     ],
   },
   {

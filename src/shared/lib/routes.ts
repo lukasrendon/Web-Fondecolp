@@ -13,6 +13,8 @@ export const ROUTES = {
   privacy: "/privacidad",
   terms: "/terminos",
   faq: "/preguntas-frecuentes",
+  pitch: "/presentacion",
+  map: "/mapa",
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];
