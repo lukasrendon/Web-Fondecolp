@@ -15,6 +15,7 @@ export const ROUTES = {
   faq: "/preguntas-frecuentes",
   pitch: "/presentacion",
   map: "/mapa",
+  quote: "/propuesta-economica",
 } as const;
 
 export type AppRoute = (typeof ROUTES)[keyof typeof ROUTES];

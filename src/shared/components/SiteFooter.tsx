@@ -12,7 +12,7 @@ const columns = [
       { href: ROUTES.governance, label: "Órganos de administración" },
       { href: ROUTES.reports, label: "Informes" },
       { href: ROUTES.pitch, label: "Presentación" },
-      { href: ROUTES.map, label: "Mapa del sitio" },
+      { href: ROUTES.quote, label: "Propuesta económica" },
     ],
   },
   {

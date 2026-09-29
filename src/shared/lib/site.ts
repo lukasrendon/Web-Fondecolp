@@ -32,8 +32,8 @@ export const NAV = [
       { href: ROUTES.reports, label: "Informes y asamblea" },
       { href: ROUTES.faq, label: "Preguntas frecuentes" },
       { href: ROUTES.pitch, label: "Presentación" },
+      { href: ROUTES.quote, label: "Propuesta económica" },
       { href: ROUTES.map, label: "Mapa del sitio" },
-      { href: ROUTES.proposal, label: "Análisis técnico" },
     ],
   },
   {

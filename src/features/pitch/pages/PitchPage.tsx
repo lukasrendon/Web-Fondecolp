@@ -116,12 +116,11 @@ export function PitchPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Siguiente paso</p>
             <h3 className="font-display mt-2 text-2xl">Propuesta económica y cronograma</h3>
             <p className="mt-3 text-sm leading-6 text-white/75">
-              Con el alcance cerrado se entrega un documento con inversión, forma de pago,
-              tiempos y lo que queda fuera. Hasta entonces, esta demo es una propuesta visual,
-              no el sitio oficial.
+              La inversión ya está desglosada: opción A $12.900.000 o opción B $14.900.000 con seis
+              meses de acompañamiento. Hosting y dominio no se cobran.
             </p>
             <Button asChild variant="secondary" className="mt-6">
-              <Link href={ROUTES.map}>Abrir el mapa del sitio</Link>
+              <Link href={ROUTES.quote}>Ver propuesta económica</Link>
             </Button>
           </div>
         </Container>
