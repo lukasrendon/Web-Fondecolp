@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/sha
 
 const included = [
   "Sitio institucional según la demo: inicio, quiénes somos, órganos, informes, ahorro, crédito con simulador, convenios, campañas GES, asóciate, formulario, contacto, FAQ, privacidad y términos.",
-  "Publicación en el Hostinger y el dominio que ya tienen, con redirecciones desde WordPress.",
+  "Publicación en el Hostinger que administramos nosotros, apuntando el dominio del fondo, con redirecciones desde WordPress.",
   "Oficina virtual y Pagos PSE intactos.",
   "Dos rondas de ajustes de textos, tarifas y piezas de convenio.",
   "Formularios, WhatsApp, versión móvil y 1 hora de entrega de claves.",
@@ -83,9 +83,10 @@ export function QuotePage() {
         </Container>
         <Container className="mt-6">
           <p className="rounded-2xl bg-navy-soft px-5 py-4 text-sm text-navy">
-            En la opción A el fondo ahorra {formatCop(saved)} frente al valor de referencia. Hosting
-            y dominio no se cobran. Si después de los {QUOTE.courtesyMonths} meses quieren seguir
-            con cambios, el mes queda en {formatCop(QUOTE.monthlyAfter)}.
+            En la opción A el fondo ahorra {formatCop(saved)} frente al valor de referencia. El
+            hosting lo operamos nosotros; no va como ítem extra en este primer caso. El dominio
+            permanece del fondo. Si después de los {QUOTE.courtesyMonths} meses quieren seguir con
+            cambios, el mes queda en {formatCop(QUOTE.monthlyAfter)}.
           </p>
         </Container>
       </Section>
@@ -144,8 +145,8 @@ export function QuotePage() {
             <div className="rounded-2xl border border-line p-4">
               <dt className="text-xs font-semibold uppercase tracking-wide text-leaf">Qué no están pagando</dt>
               <dd className="mt-2 text-sm text-muted">
-                Hosting, dominio, oficina virtual ni PSE. El descuento son horas más baratas, no
-                menos páginas.
+                Hosting (lo operamos nosotros), oficina virtual ni PSE. El descuento son horas más
+                baratas, no menos páginas. El dominio debe quedar a nombre del fondo.
               </dd>
             </div>
           </dl>

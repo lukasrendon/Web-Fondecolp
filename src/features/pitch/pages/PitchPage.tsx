@@ -108,7 +108,7 @@ export function PitchPage() {
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted">
               <li>· Quién aprueba textos, tarifas y el pago (gerencia, junta, compras).</li>
               <li>· Fecha tentativa de asamblea o campaña para anclar el lanzamiento.</li>
-              <li>· Si el dominio y el correo siguen en Hostinger o se mueven.</li>
+              <li>· Confirmar que el dominio fondecolp.com está a nombre del fondo (nosotros operamos el Hostinger).</li>
               <li>· Quién va a actualizar tasas y flyers después del día uno.</li>
             </ul>
           </div>

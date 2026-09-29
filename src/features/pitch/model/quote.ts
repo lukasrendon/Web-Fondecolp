@@ -14,7 +14,7 @@ export const QUOTE = {
       listPrice: 12_900_000,
       price: 6_900_000,
       period: "pago único · tarifa primer caso",
-      note: "La web publicada en su Hostinger y dominio. El descuento existe porque este proyecto abre portafolio; no es la tarifa de un segundo fondo.",
+      note: "Publicamos nosotros en el Hostinger que administramos. El dominio fondecolp.com sigue del fondo. El descuento es de primer caso; no es la tarifa de un segundo cliente.",
     },
     {
       id: "B",
@@ -51,7 +51,7 @@ export const VALUE_BREAKDOWN = [
   {
     item: "Migración desde WordPress",
     hours: 22,
-    text: "PDFs, redirecciones, Hostinger, no romper oficina virtual ni PSE.",
+    text: "PDFs, redirecciones, publicación en Hostinger a nuestro cargo, sin romper oficina virtual ni PSE.",
   },
   {
     item: "Ajustes, prueba y garantía",
