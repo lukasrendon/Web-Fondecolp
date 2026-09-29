@@ -8,32 +8,40 @@ import { Badge } from "@/shared/ui/field";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/ui/card";
 
 const included = [
-  "Sitio institucional según la demo: inicio, quiénes somos, órganos, informes, ahorro, crédito con simulador, convenios, campañas GES (Salitre, Mundo Aventura, Nápoles), asóciate, formulario, contacto, FAQ, privacidad y términos.",
-  "Paso de WordPress a la web nueva en el dominio y Hostinger que ya tienen, con redirecciones de las URLs actuales.",
-  "Oficina virtual y Pagos PSE intactos: solo se enlazan.",
+  "Sitio institucional según la demo: inicio, quiénes somos, órganos, informes, ahorro, crédito con simulador, convenios, campañas GES, asóciate, formulario, contacto, FAQ, privacidad y términos.",
+  "Publicación en el Hostinger y el dominio que ya tienen, con redirecciones desde WordPress.",
+  "Oficina virtual y Pagos PSE intactos.",
   "Dos rondas de ajustes de textos, tarifas y piezas de convenio.",
-  "Formularios de contacto y preasociación, WhatsApp y versión móvil.",
-  "Capacitación de 1 hora para quien vaya a pedir cambios.",
+  "Formularios, WhatsApp, versión móvil y 1 hora de entrega de claves.",
   "30 días de garantía por errores de lo entregado.",
 ];
 
 const excluded = [
-  "Rehacer la oficina virtual o el recaudo PSE.",
-  "Panel tipo WordPress para que editen ellos cada párrafo.",
-  "Solicitud de crédito 100% en línea (se mantienen los PDF oficiales).",
-  "Sesión de fotos, video o un correo @fondecolp.com.",
-  "Revisión jurídica de la política de datos por un abogado del fondo.",
-  "Campañas GES nuevas después de las dos rondas (entran en el acompañamiento o se cotizan sueltas).",
+  "Rehacer oficina virtual o PSE.",
+  "Panel para que editen cada párrafo como en WordPress.",
+  "Crédito 100% en línea, fotos nuevas o correo @fondecolp.com.",
+  "Revisión jurídica de habeas data.",
+  "Más de dos rondas de cambio o campañas nuevas fuera del acompañamiento.",
+];
+
+const discountTerms = [
+  "Autorización por escrito para usar el caso en portafolio (antes/después, logo y URL), sin datos de asociados.",
+  "Un interlocutor del fondo y respuestas de contenido en máximo 5 días hábiles.",
+  "El descuento se nombra en la cotización: valor de referencia vs tarifa aplicada.",
+  "Pasados los 3 meses de la opción B, cualquier cambio se cobra aparte.",
 ];
 
 export function QuotePage() {
+  const optionA = QUOTE.options[0];
+  const saved = optionA.listPrice - optionA.price;
+
   return (
     <>
       <PageHero
         crumbs={[{ href: ROUTES.pitch, label: "Presentación" }, { label: "Propuesta económica" }]}
-        eyebrow="Propuesta económica"
-        title="Inversión para publicar la web que ya vieron."
-        description={`${QUOTE.client}. Elaborada el ${QUOTE.issued}. Válida hasta el ${QUOTE.validUntil}. Precios en pesos colombianos, IVA no incluido (se suma si el prestador es responsable de IVA).`}
+        eyebrow="Tarifa primer caso"
+        title="Precio de quien nos abrió la puerta, no el de lista."
+        description={`${QUOTE.client}. El valor de referencia del trabajo es ${formatCop(QUOTE.listLaunch)}. Se aplica una tarifa de portafolio. IVA no incluido. Válida hasta el ${QUOTE.validUntil}.`}
         actions={
           <>
             <Button asChild>
@@ -46,6 +54,11 @@ export function QuotePage() {
         }
       />
       <Section>
+        <Container className="mb-8 rounded-2xl bg-leaf-soft px-5 py-4 text-sm leading-6 text-leaf-deep">
+          FONDECOLP nos da el primer proyecto institucional. A cambio, cobramos menos y pedimos
+          poder mostrarlo a otros fondos. El favor es recíproco: no se hereda a un segundo cliente
+          ni se convierte en soporte indefinido.
+        </Container>
         <Container className="grid gap-5 lg:grid-cols-2">
           {QUOTE.options.map((option) => (
             <Card
@@ -60,6 +73,7 @@ export function QuotePage() {
                   {option.id === QUOTE.recommended ? <Badge tone="leaf">Recomendada</Badge> : null}
                 </div>
                 <CardTitle>{option.name}</CardTitle>
+                <p className="text-sm text-muted line-through">{formatCop(option.listPrice)}</p>
                 <p className="font-display text-4xl text-navy">{formatCop(option.price)}</p>
                 <CardDescription>{option.period}</CardDescription>
               </CardHeader>
@@ -69,10 +83,9 @@ export function QuotePage() {
         </Container>
         <Container className="mt-6">
           <p className="rounded-2xl bg-navy-soft px-5 py-4 text-sm text-navy">
-            El acompañamiento suelto, si eligen solo la opción A, es {formatCop(QUOTE.monthly)} al
-            mes durante {QUOTE.months} meses, o se puede sumar después. Hosting y dominio no se
-            cobran: usan el Hostinger y el fondecolp.com que ya tienen. Sí entra la configuración
-            para que esta web corra ahí (Node o publicación estática, según el plan).
+            En la opción A el fondo ahorra {formatCop(saved)} frente al valor de referencia. Hosting
+            y dominio no se cobran. Si después de los {QUOTE.courtesyMonths} meses quieren seguir
+            con cambios, el mes queda en {formatCop(QUOTE.monthlyAfter)}.
           </p>
         </Container>
       </Section>
@@ -97,14 +110,25 @@ export function QuotePage() {
         </Container>
       </Section>
       <Section>
+        <Container>
+          <h2 className="font-display text-3xl text-navy">A cambio del descuento</h2>
+          <ul className="mt-4 grid gap-3 md:grid-cols-2">
+            {discountTerms.map((item) => (
+              <li key={item} className="rounded-2xl border border-line bg-white p-4 text-sm leading-6 text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </Section>
+      <Section className="bg-white">
         <Container className="grid gap-8 lg:grid-cols-3">
           <Card>
             <CardHeader>
               <CardTitle>Tiempos</CardTitle>
               <CardDescription>
-                3 a 4 semanas después del anticipo y de recibir textos oficiales, junta vigente y
-                visto bueno de las campañas. La demo acorta el diseño: el tiempo se va en validar,
-                publicar y no romper PSE.
+                3 a 4 semanas después del anticipo y de los textos oficiales. La demo ya existe:
+                el tiempo es validar, publicar y no romper PSE.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -112,9 +136,8 @@ export function QuotePage() {
             <CardHeader>
               <CardTitle>Forma de pago</CardTitle>
               <CardDescription>
-                50% al firmar para iniciar. 40% al aprobar el prelanzamiento en una URL de prueba.
-                10% al apuntar fondecolp.com a la web nueva. Transferencia a la cuenta que se
-                indique en el contrato.
+                50% al firmar. 40% al aprobar la URL de prueba. 10% al apuntar fondecolp.com.
+                Pensado para no ahogar al fondo ni al prestador.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -122,9 +145,8 @@ export function QuotePage() {
             <CardHeader>
               <CardTitle>Condiciones</CardTitle>
               <CardDescription>
-                Un solo interlocutor del fondo. Respuestas de contenido en máximo 5 días hábiles o
-                el cronograma se corre. El código y la publicación se entregan al estar pagado el
-                proyecto. Esta oferta vale hasta el {QUOTE.validUntil}.
+                Código y publicación se entregan al estar pagado. Oferta válida hasta el{" "}
+                {QUOTE.validUntil}.
               </CardDescription>
             </CardHeader>
           </Card>

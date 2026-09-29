@@ -116,8 +116,9 @@ export function PitchPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Siguiente paso</p>
             <h3 className="font-display mt-2 text-2xl">Propuesta económica y cronograma</h3>
             <p className="mt-3 text-sm leading-6 text-white/75">
-              La inversión ya está desglosada: opción A $12.900.000 o opción B $14.900.000 con seis
-              meses de acompañamiento. Hosting y dominio no se cobran.
+              Tarifa de primer caso: opción A $6.900.000 o opción B $8.500.000 con tres meses. El
+              valor de referencia del trabajo es $12.900.000; el descuento se escribe para que no
+              se vuelva el precio de lista.
             </p>
             <Button asChild variant="secondary" className="mt-6">
               <Link href={ROUTES.quote}>Ver propuesta económica</Link>
