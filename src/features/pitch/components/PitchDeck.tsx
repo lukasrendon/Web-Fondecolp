@@ -12,7 +12,7 @@ import {
   Maximize2,
   X,
 } from "lucide-react";
-import { SLIDES, type Slide } from "@/features/pitch/model/slides";
+import { DEMO_URL, SLIDES, type Slide } from "@/features/pitch/model/slides";
 import { QUOTE } from "@/features/pitch/model/quote";
 import { ScreenMock } from "@/features/pitch/components/ScreenMocks";
 import { downloadPitchPptx } from "@/features/pitch/lib/build-pptx";
@@ -71,6 +71,15 @@ function SlideChrome({
               {downloading ? "Generando…" : "Descargar PPT"}
             </span>
           </Button>
+          <a
+            href={DEMO_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 rounded-full border border-white/15 px-3 py-1.5 hover:bg-white/10"
+          >
+            fyltest.online
+            <ExternalLink className="size-3.5" />
+          </a>
           <Link
             href={ROUTES.home}
             className="hidden items-center gap-1 rounded-full border border-white/15 px-3 py-1.5 hover:bg-white/10 sm:inline-flex"
@@ -94,7 +103,14 @@ function CoverSlide({ slide }: { slide: Extract<Slide, { kind: "cover" }> }) {
           {slide.title}
         </h1>
         <p className="mt-5 max-w-lg text-base leading-7 text-white/75 sm:text-lg">{slide.subtitle}</p>
-        <p className="mt-8 text-sm text-white/50">Usa ← → o los botones para avanzar</p>
+        <Button asChild size="lg" className="mt-8">
+          <a href={DEMO_URL} target="_blank" rel="noreferrer">
+            Recorrer la demo
+            <ExternalLink className="size-4" />
+          </a>
+        </Button>
+        <p className="mt-3 text-sm text-white/60">{DEMO_URL}</p>
+        <p className="mt-6 text-sm text-white/50">Usa ← → o los botones para avanzar</p>
       </div>
       <div className="w-full max-w-lg lg:max-w-md">
         <ScreenMock screen="home" />
@@ -256,10 +272,10 @@ function CloseSlide({ slide }: { slide: Extract<Slide, { kind: "close" }> }) {
       </ol>
       <div className="mt-8 flex flex-wrap gap-3">
         <Button asChild size="lg">
-          <Link href={ROUTES.home}>
+          <a href={DEMO_URL} target="_blank" rel="noreferrer">
             Recorrer el sitio demo
             <ArrowRight className="size-4" />
-          </Link>
+          </a>
         </Button>
         <Button asChild size="lg" variant="outline">
           <Link href={ROUTES.quote}>Ver propuesta económica</Link>
@@ -269,8 +285,7 @@ function CloseSlide({ slide }: { slide: Extract<Slide, { kind: "close" }> }) {
         </Button>
       </div>
       <p className="mt-6 max-w-xl text-sm text-white/50">
-        Para enviar por correo: descarga el PPT desde el botón superior o comparte el enlace de esta
-        presentación junto con la demo navegable.
+        Para enviar por correo: descarga el PPT desde el botón superior o comparte {DEMO_URL}
       </p>
     </div>
   );

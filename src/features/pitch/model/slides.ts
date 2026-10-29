@@ -5,6 +5,9 @@ import { formatCop } from "@/shared/lib/utils";
 const optionA = QUOTE.options[0];
 const optionB = QUOTE.options[1];
 
+/** Demo publicada. Solo se muestra en la presentación local. */
+export const DEMO_URL = "https://fyltest.online/";
+
 export type ScreenId =
   | "home"
   | "credit"

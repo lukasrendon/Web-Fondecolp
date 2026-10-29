@@ -1,6 +1,6 @@
 import PptxGenJS from "pptxgenjs";
 import { QUOTE } from "@/features/pitch/model/quote";
-import { SLIDES } from "@/features/pitch/model/slides";
+import { DEMO_URL, SLIDES } from "@/features/pitch/model/slides";
 import { formatCop } from "@/shared/lib/utils";
 
 const COLORS = {
@@ -97,10 +97,21 @@ export async function downloadPitchPptx() {
         x: 0.6,
         y: 3.2,
         w: 8.5,
-        h: 1.2,
+        h: 0.9,
         fontSize: 15,
         color: COLORS.muted,
         fontFace: "Calibri",
+      });
+      slide.addText("Demo navegable: fyltest.online", {
+        x: 0.6,
+        y: 4.25,
+        w: 8.5,
+        h: 0.35,
+        fontSize: 16,
+        color: COLORS.gold,
+        bold: true,
+        fontFace: "Calibri",
+        hyperlink: { url: DEMO_URL },
       });
     }
 
@@ -462,6 +473,17 @@ export async function downloadPitchPptx() {
           fontFace: "Calibri",
           valign: "middle",
         });
+      });
+      slide.addText("Demo navegable: fyltest.online", {
+        x: 0.5,
+        y: 4.6,
+        w: 9,
+        h: 0.35,
+        fontSize: 14,
+        color: COLORS.gold,
+        bold: true,
+        fontFace: "Calibri",
+        hyperlink: { url: DEMO_URL },
       });
     }
 
