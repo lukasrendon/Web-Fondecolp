@@ -85,14 +85,15 @@ export const SCOPE_PACKAGES = [
   },
   {
     name: "Acompañamiento",
-    tag: "6 meses",
-    summary: "El fondo no se queda solo el día del lanzamiento.",
+    tag: "12 meses",
+    summary: "Lanzamiento más un año de mantenimiento, para que el fondo no se quede solo.",
     includes: [
       "Todo lo del Lanzamiento",
       "Hasta 4 actualizaciones de contenido al mes (tasas, junta, campañas, PDFs)",
       "Subida de piezas de convenios como las de GES",
       "Soporte por WhatsApp en horario hábil, con tiempo de respuesta acordado",
       "Copia de seguridad y vigilancia básica de que el sitio esté en línea",
+      "Tras el año: mantenimiento a $ 200.000 / mes si continúan",
     ],
   },
   {

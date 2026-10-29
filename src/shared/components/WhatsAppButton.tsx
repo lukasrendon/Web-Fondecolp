@@ -1,6 +1,13 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { SITE } from "@/shared/lib/site";
+import { ROUTES } from "@/shared/lib/routes";
 
 export function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname === ROUTES.pitch) return null;
+
   return (
     <a
       href={SITE.whatsappUrl}

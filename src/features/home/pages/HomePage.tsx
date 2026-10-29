@@ -54,7 +54,7 @@ export function HomePage() {
   return (
     <>
       <section className="hero-wash text-white">
-        <Container className="grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+        <Container className="grid max-w-7xl items-center gap-10 py-16 lg:grid-cols-[0.95fr_1.15fr] lg:gap-12 lg:py-24">
           <div>
             <Badge tone="gold" className="bg-white/10 text-gold">
               Fondo de empleados · Sector solidario
@@ -91,7 +91,7 @@ export function HomePage() {
               ))}
             </dl>
           </div>
-          <CreditSimulator compact />
+          <CreditSimulator />
         </Container>
       </section>
 

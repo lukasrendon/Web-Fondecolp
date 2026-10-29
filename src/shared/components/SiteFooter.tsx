@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE } from "@/shared/lib/site";
 import { ROUTES } from "@/shared/lib/routes";
 import { Container } from "@/shared/components/Layout";
@@ -35,6 +38,9 @@ const columns = [
 ];
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname === ROUTES.pitch) return null;
+
   return (
     <footer className="bg-navy-deep text-white">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">

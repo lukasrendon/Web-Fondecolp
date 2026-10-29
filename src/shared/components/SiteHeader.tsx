@@ -21,6 +21,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
 
+  if (pathname === ROUTES.pitch) return null;
+
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-navy-deep text-white/80">

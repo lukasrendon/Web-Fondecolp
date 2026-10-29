@@ -28,7 +28,7 @@ const discountTerms = [
   "Autorización por escrito para usar el caso en portafolio (antes/después, logo y URL), sin datos de asociados.",
   "Un interlocutor del fondo y respuestas de contenido en máximo 5 días hábiles.",
   "El descuento se nombra en la cotización: valor de referencia vs tarifa aplicada.",
-  "Pasados los 3 meses de la opción B, cualquier cambio se cobra aparte.",
+  "Pasado el año de la opción B, el mantenimiento queda en la tarifa mensual acordada.",
 ];
 
 export function QuotePage() {
@@ -85,8 +85,9 @@ export function QuotePage() {
           <p className="rounded-2xl bg-navy-soft px-5 py-4 text-sm text-navy">
             En la opción A el fondo ahorra {formatCop(saved)} frente al valor de referencia. El
             hosting lo operamos nosotros; no va como ítem extra en este primer caso. El dominio
-            permanece del fondo. Si después de los {QUOTE.courtesyMonths} meses quieren seguir con
-            cambios, el mes queda en {formatCop(QUOTE.monthlyAfter)}.
+            permanece del fondo. Mantenimiento mensual: {formatCop(QUOTE.monthlyAfter)}. La opción B
+            incluye {QUOTE.courtesyMonths} meses; al vencer ese año, si continúan, aplica la misma
+            tarifa mensual.
           </p>
         </Container>
       </Section>
