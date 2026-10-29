@@ -6,6 +6,25 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // pptxgenjs importa node:fs y node:https solo en Node. Webpack del cliente
+  // no entiende el esquema "node:" y el build de producción falla.
+  webpack: (config, { isServer, webpack }) => {
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(/^node:/, (resource: { request: string }) => {
+        resource.request = resource.request.replace(/^node:/, "");
+      }),
+    );
+
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        https: false,
+      };
+    }
+
+    return config;
+  },
   async redirects() {
     return [
       { source: "/asociados", destination: "/asociate", permanent: false },
